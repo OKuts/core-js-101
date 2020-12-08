@@ -304,7 +304,7 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-  return arr.reverse().filter((el) => typeof el === 'number' && el > 0)[0] || [];
+  return arr.reverse().filter((elem) => typeof elem === 'number' && elem > 0)[0] || [];
 }
 
 /**
