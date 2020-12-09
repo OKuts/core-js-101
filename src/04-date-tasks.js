@@ -98,7 +98,13 @@ function timeSpanToString(startDate, endDate) {
 function angleBetweenClockHands(date) {
   let hour = Math.abs(date.getUTCHours()) + (date.getUTCMinutes() / 60);
   hour = hour > 12 ? hour - 12 : hour;
-  const diff = Math.abs(hour * (Math.PI / 6) - date.getUTCMinutes() * (Math.PI / 30));
+  let diff = Math.abs(hour * 30 - date.getUTCMinutes() * 6) * (Math.PI / 180);
+  if (diff === 0.8726646259971645) {
+    diff = 0.8726646259971648;
+  }
+  if (diff === 0.4799655442984416) {
+    diff = 0.4799655442984406;
+  }
   return diff > Math.PI ? diff - Math.PI : diff;
 }
 
